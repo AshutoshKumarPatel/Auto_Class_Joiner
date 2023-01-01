@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_links %} 
+    <link rel = "stylesheet" href = "{% static 'css/dashboard.css' %}" />   
+{% endblock head_links %}
+
+{% block title %} Auto Class Joiner{% endblock title %}
+
+{% block content %} 
+
+<div class = 'stats-cards'>
+    <div class = 'card'>
+        <div class = 'text-val'>
+            <div>
+                Times script ran
+            </div>
+            <div> 
+                10
+            </div> 
+        </div>
+        <div class = 'text-icon'>
+            Habibi
+        </div>
+    </div>
+    <div class = 'card'>
+        <div class = 'text-val'>
+            <div>
+                Times class Joined
+            </div>
+            <div> 
+            99
+            </div> 
+        </div>
+        <div class = 'text-icon'>
+            Habibi
+        </div>        
+    </div>
+    <div class = 'card'>
+        <div class = 'text-val'>
+            <div>
+                Times script Failed
+            </div>
+            <div> 
+                10
+            </div> 
+        </div>
+        <div class = 'text-icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>        
+    </div>
+</div>
+
+
+<div class = 'upcoming-task'>
+    <span>
+        Upcoming Task
+    </span>
+
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+</div>
+
+<div class = 'completed-task'>
+    <span>
+        Completed Task
+    </span>
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+    <div class = 'task-container'>
+        <div class = 'icon'>
+            <img src = "{% static 'images/warning_icon.png' %}">
+        </div>
+        <div class = 'timing'>
+            at 10:05 A.M.
+        </div>
+        <div class = 'task-title'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolorum.
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

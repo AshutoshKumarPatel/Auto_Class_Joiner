@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Time Table {% endblock title %} 
+
+{% block head_links %}
+    <link rel = "stylesheet" href = "{% static 'css/timetable.css' %}" />
+{% endblock head_links %}
+
+{% block content %}
+    {% if message %}
+        <div class='message-window'>
+            <a href="{% url 'edit_timing' %}">
+                <div class='message'>
+                    <span>
+                        {{ message }}
+                    </span>
+                </div>
+            </a>
+        </div>
+    {% endif %}
+    <table>
+        <thead>
+            <th>
+            Day\Time
+            </th>
+            {% for timing in timings %}
+            <th>
+                {{ timing }}
+            </th>
+            {% endfor %}
+        </thead>
+    </table>
+
+
+
+{% endblock content %}

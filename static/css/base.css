@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    display: flex;
+}
+
+a {
+    all : unset    
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100vh;
+    background-color: #e4e4e4;
+    box-shadow: 0px 0px 20px 0px #838383;
+    z-index: 1;
+}
+
+.sidebar hr {
+    border-top: 1px solid;
+    width: 90%;
+    margin: 0px auto 50px auto;
+    margin-bottom: 50px;
+}
+
+.head {
+    font-family: Ubuntu;
+    font-size: 1.6vw;
+    text-align: center;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 10%;
+}
+
+.head img {
+    margin-right: 5%;
+}
+
+.main-container {
+    width: 80%;
+    height: 100vh;
+    background-color: #d9d9d9;
+}
+.menu {
+    height: 50%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5% 2%;
+    background-color: #d9d9d9;
+    border-bottom: 1px solid;
+    border-color: #A3A3A3;
+    word-wrap: break-word;
+    font-family: Ubuntu;
+    font-size: 2.4vh;
+}
+
+.menu-item:nth-of-type(1) {
+    border-top: 1px solid;
+    border-color: #A3A3A3;
+}
+
+.menu-item img {
+    margin-left: 2%;
+    margin-right: 5%;
+    filter: invert(50%) sepia(0%) saturate(1740%) hue-rotate(346deg) brightness(104%) contrast(125%);
+    width: 4vh;
+    height: auto;
+}
+
+.footer {
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer span {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    font-family: Ubuntu;
+    font-size: 2.2vh;
+    text-align: center;
+}
+
+.footer .menu-item:nth-of-type(2) {
+    padding-bottom: 3%;
+}
+
+.header {
+    width: 100%;
+    height: 8vh;
+    background-color: #e4e4e4;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 20px 0px #838383;
+}
+
+.search-bar {
+    width: 90%;
+    height: 80%;
+    background-color: #f3f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.4vw;
+    padding-left: 1%;
+    border-radius: 10px;
+}
+
+.search-box {
+    width: 95%;
+    height: 100%;
+}
+
+.search-input {
+    width: 98%;
+    height: 100%;
+    padding-left: 2%;
+    font-size: 1.6vw;
+    background-color: inherit;
+    outline: none;
+}
+
+.container-body {
+    display: flex;
+    flex-direction: column;
+    margin : 1%;
+}
+
+.settings img:hover {
+    animation: spin infinite 3s ease;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
