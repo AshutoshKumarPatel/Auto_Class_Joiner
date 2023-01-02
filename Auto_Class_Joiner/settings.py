@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,7 +129,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = "Class_Images/"
-MEDIA_ROOT = BASE_DIR / "Class_Images"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Class_Images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

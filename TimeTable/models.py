@@ -9,24 +9,79 @@ class Timing(models.Model):
     def __str__(self):
         return self.start_time.strftime("%H:%M:%S") + " - " + self.end_time.strftime("%H:%M:%S")
 
-class TimeTable(models.Model):
+class Monday(models.Model):
 
-    DAYS_OF_WEEK = (
-    ('Monday', 'Monday'),
-    ('Tuesday', 'Tuesday'),
-    ('Wednesday', 'Wednesday'),
-    ('Thursday', 'Thursday'),
-    ('Friday', 'Friday'),
-    ('Saturday', 'Saturday'),
-    ('Sunday', 'Sunday'),
-)
-
-    day = models.CharField(max_length=9, choices=DAYS_OF_WEEK, null = False)
-    timing = models.ForeignKey(Timing, on_delete=models.RESTRICT)
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
     subject = models.CharField(max_length=255, null = False)
     class_image = models.ImageField(upload_to='Class_Images')
     record_class = models.BooleanField(default=False)
     save_screenshot = models.BooleanField(default=False)
 
     def __str__(self):
-        return "On " + self.day + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+        return "On Monday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+        
+class Tuesday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Tuesday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+
+class Wednesday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Wednesday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+
+class Thursday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Thrusday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+        
+class Friday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Friday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+
+class Saturday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Saturday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"
+
+class Sunday(models.Model):
+
+    timing = models.OneToOneField(Timing, on_delete=models.RESTRICT, primary_key= True)
+    subject = models.CharField(max_length=255, null = False)
+    class_image = models.ImageField(upload_to='Class_Images')
+    record_class = models.BooleanField(default=False)
+    save_screenshot = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "On Sunday" + " Join " + self.subject + " class starting from " + str(self.timing.start_time) + " till " + str(self.timing.end_time) + " {record class is set to " +  str(self.record_class) + " and save screenshot of class is set to " + str(self.save_screenshot) + " file path of image is '" + str(self.class_image)  + str(self.class_image) + "'}"

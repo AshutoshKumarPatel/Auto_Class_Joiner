@@ -6,15 +6,26 @@ from .models import *
 
 def edit_timetable(request):
 
-    entries_in_time = Timing.objects.all()
-    entries_in_time_table = TimeTable.objects.all()
-    timings = TimeTable.objects.values_list('timing')
+    entries_in_time = Timing.objects.all().order_by('start_time')
+    monday = Monday.objects.all()
+    tuesday = Tuesday.objects.all()
+    wednesday = Wednesday.objects.all()
+    thursday = Thursday.objects.all()
+    friday = Friday.objects.all()
+    saturday = Saturday.objects.all()
+    sunday = Sunday.objects.all()
 
     if entries_in_time:
-        if entries_in_time_table:
+        if monday or tuesday or wednesday or thursday or friday or saturday or sunday:
             return render(request, "edit_timetable.html", {
-                "time_table": entries_in_time_table,
-                "timings": timings
+                "timings": entries_in_time,
+                "monday": monday,
+                "tuesday": tuesday,
+                "wednesday": wednesday,
+                "thursday": thursday,
+                "friday": friday,
+                "saturday": saturday,
+                "sunday": sunday
                 })
 
         else:

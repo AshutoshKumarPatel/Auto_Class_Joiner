@@ -1,6 +1,6 @@
 .message-window {
     width: 100%;
-    height: 90vh;
+    height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
@@ -37,6 +37,42 @@
 .message:active {
     animation: three-d_rotate 1s;
     pointer-events: none;
+}
+
+.timetable {
+    width: 90%;
+    height: 90%;
+    font-size: 2.4vmin;
+}
+
+.timetable, th{
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.timetable, th, td {
+    border: 1px solid;
+}
+
+th {
+    background-color: #ffde48;
+}
+
+.day {
+    background-color: #6d95fd;
+    padding: 10px 20px;
+}
+
+.subject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+    background: #39bb39;
+    padding: 10px 20px;
 }
 
 @keyframes three-d_rotate {

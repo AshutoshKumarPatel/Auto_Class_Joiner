@@ -6,6 +6,7 @@
 
 {% block head_links %}
     <link rel = "stylesheet" href = "{% static 'css/timetable.css' %}" />
+
 {% endblock head_links %}
 
 {% block content %}
@@ -19,20 +20,134 @@
                 </div>
             </a>
         </div>
-    {% endif %}
-    <table>
-        <thead>
-            <th>
-            Day\Time
-            </th>
-            {% for timing in timings %}
-            <th>
-                {{ timing }}
-            </th>
-            {% endfor %}
-        </thead>
+    {% else %}
+        <style>
+            .container-body {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        <table class = 'timetable'>
+            <thead>
+                <tr>
+                <th rowspan="2">Day\Time</th>
+                <th>Start</th>
+                    {% for timing in timings %}
+                        <th>
+                            {{ timing.start_time }}
+                        </th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th> End</th>
+                    {% for timing in timings %}
+                        <th>
+                            {{ timing.end_time }}
+                        </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td class = 'day' colspan="2">Monday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% if monday %}
+                            {% for monday_class in monday %}
+                                {% if monday_class.timing.start_time == timing.start_time %}
+                                    <div class = 'subject'>{{ monday_class.subject }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Tuesday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% if tuesday %}
+                            {% for tuesday_class in tuesday %}
+                                {% if tuesday_class.timing.start_time == timing.start_time %}
+                                    <div class = 'subject'>{{ tuesday_class.subject }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Wednesday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% for wednesday_class in wednesday %}
+                            {% if wednesday_class.timing.start_time == timing.start_time %}
+                            <div class = 'subject'>{{ wednesday_class.subject }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Thursday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% for thursday_class in thursday %}
+                            {% if thursday_class.timing.start_time == timing.start_time %}
+                                <div class = 'subject'>{{ thursday_class.subject }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Friday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% for friday_class in friday %}
+                            {% if friday_class.timing.start_time == timing.start_time %}
+                                <div class = 'subject'>{{ friday_class.subject }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Saturday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% for saturday_class in saturday %}
+                            {% if saturday_class.timing.start_time == timing.start_time %}
+                                <div class = 'subject'>{{ saturday_class.subject }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td class = 'day' colspan="2">Sunday</td>
+                {% for timing in timings %}
+                    <td>
+                        {% for sunday_class in sunday %}
+                            {% if sunday_class.timing.start_time == timing.start_time %}
+                                <div class = 'subject'>{{ sunday_class.subject }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
     </table>
+    {% endif %}
 
+    <script>
+        const td = document.querySelectorAll("td");
 
-
+        td.forEach(function (element) {
+            if (element.textContent == " ") {
+                element.classList.add("highlight");
+            }
+        });
+    </script>
 {% endblock content %}
