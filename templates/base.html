@@ -10,69 +10,69 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         {% block head_links %} {% endblock head_links %}
     </head>
     <body>
-        <div class = 'sidebar'>
+        <div class= 'header'>
             <div class = 'head'>
-                <img src = "{% static 'images/site_logo.png' %}">
-                Auto Class Joiner Dashboard
+                <a href="{% url 'dashboard' %}">
+                    <img src = "{% static 'images/site_logo.png' %}">
+                    Auto Class Joiner Dashboard
+                </a>
             </div>
-            <hr>
-
-            <div class = 'menu'>
-                <a href="/timetable">
+            <div class = 'search-bar'>
+                <img src = "{% static 'images/cli_icon.png' %}">
+                <form class = 'search-box'>
+                    <input type="text" class="search-input" placeholder="Type Anything...">
+                </form>
+            </div>
+            <div class = 'settings'>
+                <img src = "{% static 'images/settings_icon.png' %}">
+            </div>
+       </div> 
+       <div class = 'main-container'>
+            <div class = 'sidebar'>
+                <div class = 'menu'>
+                    <a href="/timetable">
+                        <div class = 'menu-item'>
+                            <img src = "{% static 'images/time_table_icon.png' %}">
+                            View/Edit Time Table
+                        </div>
+                    </a>
+                    <a href="{% url 'edit_timetable' %">
+                        <div class ='menu-item'>
+                            <img src = "{% static 'images/holiday_icon.png' %}">
+                            View/Edit Holidays
+                        </div>
+                    </a>
+                    <a href="{% url 'dashboard' %}">
+                        <div class ='menu-item'>
+                            <img src = "{% static 'images/class.png' %}">
+                            Add/View/ Remove Extra Clsas
+                        </div>
+                    </a>
+                    <a href="{% url 'edit_timetable' %">
+                        <div class ='menu-item'>
+                            <img src = "{% static 'images/calendar_icon.png' %}">
+                            Calendar View
+                        </div>
+                    </a>
+                </div>
+                <div class = 'footer'>
+                    <span>Auto Class Joiner v0.1</span>
+                    <div class = 'menu-item'>
+                        <img src = "{% static 'images/star_icon.png' %}">
+                        Star this project on GitHub
+                    </div>
                     <div class = 'menu-item'>
                         <img src = "{% static 'images/time_table_icon.png' %}">
-                        Add/View/Edit Time Table
+                        Report and Issue
                     </div>
-                </a>
-                <a href="{% url 'edit_timetable' %">
-                    <div class ='menu-item'>
-                        <img src = "{% static 'images/holiday_icon.png' %}">
-                        Add/View/Edit Holidays
-                    </div>
-                </a>
-                <a href="{% url 'edit_timetable' %">
-                    <div class ='menu-item'>
-                        <img src = "{% static 'images/class.png' %}">
-                        Add/View/ Remove Extra Clsas
-                    </div>
-                </a>
-                <a href="{% url 'edit_timetable' %">
-                    <div class ='menu-item'>
-                        <img src = "{% static 'images/calendar_icon.png' %}">
-                        Calendar View
-                    </div>
-                </a>
-            </div>
-            <div class = 'footer'>
-                <span>Auto Class Joiner v0.1</span>
-                <div class = 'menu-item'>
-                    <img src = "{% static 'images/star_icon.png' %}">
-                    Star this project on GitHub
-                </div>
-                <div class = 'menu-item'>
-                    <img src = "{% static 'images/time_table_icon.png' %}">
-                    Report and Issue
                 </div>
             </div>
-        </div>
-        <div class = 'main-container'>
-           <div class= 'header'>
-                <div class = 'search-bar'>
-                    <img src = "{% static 'images/cli_icon.png' %}">
-                    <form class = 'search-box'>
-                        <input type="text" class="search-input" placeholder="Type Anything...">
-                    </form>
-                </div>
-                <div class = 'settings'>
-                    <img src = "{% static 'images/settings_icon.png' %}">
-                </div>
-           </div> 
-           <div class = 'container-body'>
+            <div class = 'container-body'>
                 {% block content %} {% endblock content %}
-           </div>
-        </div>
+            </div>
     </body>
 </html>

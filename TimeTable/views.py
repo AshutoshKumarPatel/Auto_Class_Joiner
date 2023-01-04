@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -17,7 +18,7 @@ def edit_timetable(request):
 
     if entries_in_time:
         if monday or tuesday or wednesday or thursday or friday or saturday or sunday:
-            return render(request, "edit_timetable.html", {
+            return render(request, "timetable.html", {
                 "timings": entries_in_time,
                 "monday": monday,
                 "tuesday": tuesday,
@@ -29,9 +30,9 @@ def edit_timetable(request):
                 })
 
         else:
-            return render(request, "edit_timetable.html", {"message": "Timing are added its time to make the time table."})
+            return render(request, "timetable.html", {"message": "Timing are added its time to make the time table."})
     else:
-        return render(request, "edit_timetable.html", {"message": "Start by creating class timings."})
+        return render(request, "timetable.html", {"message": "Start by creating class timings."})
 
 def edit_timing(request):
-    return render(request, "edit_timetable.html")
+    return render(request, "timetable.html")

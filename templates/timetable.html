@@ -21,13 +21,6 @@
             </a>
         </div>
     {% else %}
-        <style>
-            .container-body {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
         <table class = 'timetable'>
             <thead>
                 <tr>
@@ -50,13 +43,13 @@
             </thead>
         <tbody>
             <tr>
-                <td class = 'day' colspan="2">Monday</td>
+                <td class = 'day' data-label="Monday" colspan="2">Monday</td>
                 {% for timing in timings %}
                     <td>
                         {% if monday %}
                             {% for monday_class in monday %}
                                 {% if monday_class.timing.start_time == timing.start_time %}
-                                    <div class = 'subject'>{{ monday_class.subject }}</div>
+                                    <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ monday_class.subject }}</div>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
@@ -64,13 +57,13 @@
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Tuesday</td>
+                <td class = 'day' data-label="Tuesday" colspan="2">Tuesday</td>
                 {% for timing in timings %}
                     <td>
                         {% if tuesday %}
                             {% for tuesday_class in tuesday %}
                                 {% if tuesday_class.timing.start_time == timing.start_time %}
-                                    <div class = 'subject'>{{ tuesday_class.subject }}</div>
+                                    <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ tuesday_class.subject }}</div>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
@@ -78,60 +71,60 @@
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Wednesday</td>
+                <td class = 'day' data-label="Wednesday" colspan="2">Wednesday</td>
                 {% for timing in timings %}
                     <td>
                         {% for wednesday_class in wednesday %}
                             {% if wednesday_class.timing.start_time == timing.start_time %}
-                            <div class = 'subject'>{{ wednesday_class.subject }}</div>
+                            <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ wednesday_class.subject }}</div>
                             {% endif %}
                         {% endfor %}
                     </td>
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Thursday</td>
+                <td class = 'day' data-label="Thursday" colspan="2">Thursday</td>
                 {% for timing in timings %}
                     <td>
                         {% for thursday_class in thursday %}
                             {% if thursday_class.timing.start_time == timing.start_time %}
-                                <div class = 'subject'>{{ thursday_class.subject }}</div>
+                                <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ thursday_class.subject }}</div>
                             {% endif %}
                         {% endfor %}
                     </td>
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Friday</td>
+                <td class = 'day' data-label="Friday" colspan="2">Friday</td>
                 {% for timing in timings %}
                     <td>
                         {% for friday_class in friday %}
                             {% if friday_class.timing.start_time == timing.start_time %}
-                                <div class = 'subject'>{{ friday_class.subject }}</div>
+                                <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ friday_class.subject }}</div>
                             {% endif %}
                         {% endfor %}
                     </td>
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Saturday</td>
+                <td class = 'day' data-label="Saturday" colspan="2">Saturday</td>
                 {% for timing in timings %}
                     <td>
                         {% for saturday_class in saturday %}
                             {% if saturday_class.timing.start_time == timing.start_time %}
-                                <div class = 'subject'>{{ saturday_class.subject }}</div>
+                                <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ saturday_class.subject }}</div>
                             {% endif %}
                         {% endfor %}
                     </td>
                 {% endfor %}
             </tr>
             <tr>
-                <td class = 'day' colspan="2">Sunday</td>
+                <td class = 'day' data-label="Sunday" colspan="2">Sunday</td>
                 {% for timing in timings %}
                     <td>
                         {% for sunday_class in sunday %}
                             {% if sunday_class.timing.start_time == timing.start_time %}
-                                <div class = 'subject'>{{ sunday_class.subject }}</div>
+                                <div data-label = "{{ timing.start_time }} - {{ timing.end_time }}" class = 'subject'>{{ sunday_class.subject }}</div>
                             {% endif %}
                         {% endfor %}
                     </td>
