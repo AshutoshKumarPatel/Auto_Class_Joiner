@@ -12,7 +12,7 @@
 {% block content %}
     {% if message %}
         <div class='message-window'>
-            <a href="{% url 'edit_timing' %}">
+            <a href = "{{ link }}">
                 <div class='message'>
                     <span>
                         {{ message }}

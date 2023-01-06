@@ -43,6 +43,12 @@
     pointer-events: none;
 }
 
+@keyframes three-d_rotate {
+    0% {transform: rotate3d(0, 0, 0, 0);}
+    50% {transform: rotate3d(0, 0, 0, 180);}
+    100% {transform: rotate3d(1, 1, 1, 360deg);}
+}
+
 .timetable {
     width: 100%;
     height: 100%;
@@ -133,11 +139,4 @@ th {
         border: 1px solid #dee2e685
     }
 
-
-}
-
-@keyframes three-d_rotate {
-    0% {transform: rotate3d(0, 0, 0, 0);}
-    50% {transform: rotate3d(0, 0, 0, 180);}
-    100% {transform: rotate3d(1, 1, 1, 360deg);}
 }

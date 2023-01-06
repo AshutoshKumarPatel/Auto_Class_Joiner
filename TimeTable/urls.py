@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.edit_timetable, name = 'timetable'),
-    path('edit_timing', views.edit_timing, name = 'edit_timing')
+    path('', views.timetable, name = 'timetable'),
+    path('edit_timings', views.edit_timings, name = 'edit_timings'),
+    path('edit_subjects', views.edit_subjects, name = 'edit_subjects'),
+    path('edit_timetable', views.edit_timetable, name = 'edit_timetable'),
 ]

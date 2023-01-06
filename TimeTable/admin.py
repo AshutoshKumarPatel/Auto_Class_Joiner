@@ -4,6 +4,7 @@ from django.contrib import admin
 from TimeTable.models import *
 
 admin.site.register(Timing)
+admin.site.register(Subject)
 admin.site.register(Monday)
 admin.site.register(Tuesday)
 admin.site.register(Wednesday)
