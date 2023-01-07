@@ -134,13 +134,4 @@
     </table>
     {% endif %}
 
-    <script>
-        const td = document.querySelectorAll("td");
-
-        td.forEach(function (element) {
-            if (element.textContent == " ") {
-                element.classList.add("highlight");
-            }
-        });
-    </script>
 {% endblock content %}

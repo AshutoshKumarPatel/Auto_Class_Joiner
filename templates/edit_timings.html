@@ -8,6 +8,48 @@
     <link rel = "stylesheet" href = "{% static 'css/edit_timings.css' %}" />
 {% endblock head_links %}
 
-{% block content %} 
-    
+{% block content %}
+    <div class='container'>
+        {% if message %}
+        <div class='message-window'>
+            <a href="{{ link }}">
+                <div class='message'>
+                    <span>
+                        {{ message }}
+                    </span>
+                </div>
+            </a>
+        </div>
+        {% endif %}
+        <span>Enter Time Range</span>
+        <div class='input-container'>
+            <form action="" method='post' class='timing-form'>
+                {% csrf_token %}
+                <div class='input-group-container'>
+                    <div class='input-group'>
+                        <label>Start Time </label>
+                        <input type='time'>
+                    </div>
+                    <div class='input-group'>
+                        <label>End Time </label>
+                        <input type='time'>
+                    </div>
+                </div>
+                <br>
+                <div class = 'btn'>
+                    <button type='submit' value='Add' class='add-button'>Save and add another</button>
+                </div>
+            </form>
+        </div>
+        <div class='data-container'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, possimus excepturi voluptatem ipsum perferendis
+            obcaecati, eos esse ea, quod quasi vel doloremque explicabo unde at corporis nam rem! Cupiditate, doloribus
+            repellendus. Accusantium, eaque esse! Dolorum magni non consequatur maiores, reprehenderit autem deserunt
+            facere. Optio suscipit incidunt cumque! Culpa iure eaque deserunt, beatae repellendus perferendis vitae, facere
+            nesciunt possimus iusto eveniet enim? Voluptate nostrum minus, vero natus architecto maxime officiis aspernatur
+            laboriosam accusantium reiciendis necessitatibus cupiditate harum delectus perspiciatis ducimus placeat at
+            cumque. A ex cumque voluptas distinctio exercitationem minus alias, dignissimos laudantium totam, accusantium
+            libero deleniti ipsam pariatur similique impedit?
+        </div>
+    </div>
 {% endblock content %}
