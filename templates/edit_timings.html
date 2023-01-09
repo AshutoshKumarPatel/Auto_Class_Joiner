@@ -10,29 +10,50 @@
 
 {% block content %}
     <div class='container'>
+        <span>Enter Time Range</span>
         {% if message %}
         <div class='message-window'>
             <a href="{{ link }}">
                 <div class='message'>
                     <span>
-                        {{ message }}
+                        Timing added to Database
                     </span>
                 </div>
             </a>
         </div>
         {% endif %}
-        <span>Enter Time Range</span>
+        {% if type == 'edit' %}
         <div class='input-container'>
             <form action="" method='post' class='timing-form'>
                 {% csrf_token %}
                 <div class='input-group-container'>
                     <div class='input-group'>
                         <label>Start Time </label>
-                        <input type='time'>
+                        {{ form.start_time }}
                     </div>
                     <div class='input-group'>
                         <label>End Time </label>
-                        <input type='time'>
+                        {{ form.end_time }}
+                    </div>
+                </div>
+                <br>
+                <div class = 'btn'>
+                    <button type='submit' class='add-button'>Update</button>
+                </div>
+            </form>
+        </div>
+        {% elif type == 'add' %}
+        <div class='input-container'>
+            <form action="" method='post' class='timing-form'>
+                {% csrf_token %}
+                <div class='input-group-container'>
+                    <div class='input-group'>
+                        <label>Start Time </label>
+                        {{ form.start_time }}
+                    </div>
+                    <div class='input-group'>
+                        <label>End Time </label>
+                        {{ form.end_time }}
                     </div>
                 </div>
                 <br>
@@ -42,14 +63,26 @@
             </form>
         </div>
         <div class='data-container'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, possimus excepturi voluptatem ipsum perferendis
-            obcaecati, eos esse ea, quod quasi vel doloremque explicabo unde at corporis nam rem! Cupiditate, doloribus
-            repellendus. Accusantium, eaque esse! Dolorum magni non consequatur maiores, reprehenderit autem deserunt
-            facere. Optio suscipit incidunt cumque! Culpa iure eaque deserunt, beatae repellendus perferendis vitae, facere
-            nesciunt possimus iusto eveniet enim? Voluptate nostrum minus, vero natus architecto maxime officiis aspernatur
-            laboriosam accusantium reiciendis necessitatibus cupiditate harum delectus perspiciatis ducimus placeat at
-            cumque. A ex cumque voluptas distinctio exercitationem minus alias, dignissimos laudantium totam, accusantium
-            libero deleniti ipsam pariatur similique impedit?
+            <form action="{% url 'delete_timing' %}" method="POST">
+                {% csrf_token %}
+                <button type = 'submit' class = 'add-button'>bhag db se</button>
+                {% for timing in timings %}
+                <div class='data-container-card'>
+                    <div class='checkbox-container'>
+                        <input type="checkbox" name="delete" value = "{{ timing.id }}">
+                    </div>
+                    <div class='time_range'>
+                        {{ timing.start_time | date:"h:i A" }} - {{ timing.end_time | date:"h:i A" }}
+                    </div>
+                    <div class='options'>
+                        <a href = "{% url 'edit_timing' timing.id %}">
+                            <img src="{% static '/images/edit.svg' %}">
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </form>
         </div>
+        {% endif %}
     </div>
 {% endblock content %}
